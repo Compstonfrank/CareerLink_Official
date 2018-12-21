@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 const Form_Employers = (props) => {
     return (
-        <h1>FORM EMPLOYERS COMPONENT</h1>
+        <h1>EMPLOYER FORM COMPONENT</h1>
     )
 }
 
