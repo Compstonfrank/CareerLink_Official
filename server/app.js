@@ -8,6 +8,9 @@ const port = process.env.PORT || 8080;
 //logging middleware
 app.use(morgan('dev'));
 
+//formats json responses for legibility
+app.set('json spaces', 2);
+
 //parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
