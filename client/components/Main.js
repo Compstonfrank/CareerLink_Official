@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, NavLink, withRouter, Switch, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Welcome from 'Welcome';
-import All_Employers from './components/All_Employers/All_Employers';
-import All_Students from './components/All_Students/All_Students';
-import Single_Employer from './components/Single_Employer/Single_Employer';
-import Single_Student from './components/Single_Student/Single_Student';
-import Form_Employer from './components/Form_Employer/Form_Employer';
-import Form_Student from './components/Form_Student/Form_Student';
+// import Welcome from 'Welcome';
+// import All_Employers from './components/All_Employers/All_Employers';
+// import All_Students from './components/All_Students/All_Students';
+// import Single_Employer from './components/Single_Employer/Single_Employer';
+// import Single_Student from './components/Single_Student/Single_Student';
+// import Form_Employer from './components/Form_Employer/Form_Employer';
+// import Form_Student from './components/Form_Student/Form_Student';
 
 const Main = () => {
   return (
