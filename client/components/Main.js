@@ -1,59 +1,42 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { Route, NavLink, withRouter, Switch, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Welcome from 'Welcome';
-import All_Employers from './components/All_Employers/All_Employers';
-import All_Students from './components/All_Students/All_Students';
-import Single_Employer from './components/Single_Employer/Single_Employer';
-import Single_Student from './components/Single_Student/Single_Student';
-import Form_Employer from './components/Form_Employer/Form_Employer';
-import Form_Student from './components/Form_Student/Form_Student';
+import Welcome from './Welcome';
+import Login from './Login/Login';
+import Sign_Up from './Sign_Up/Sign_Up';
+import User_Info from './User_Info/User_Info';
+import All_Employers from './All_Employers/All_Employers';
+import All_Students from './All_Students/All_Students';
+import Single_Employer from './Single_Employer/Single_Employer';
+import Single_Student from './Single_Student/Single_Student';
+import Form_Employer from './Form_Employer/Form_Employer';
+import Form_Student from './Form_Student/Form_Student';
 
 const Main = () => {
   return (
     <div>
       <nav id="navbar">
-        <Link
-          style={{ textDecoration: 'none', color: '#c0c0c0' }}
-          to="/employers"
-        >
-          Employers
-        </Link>
-        <Link
-          style={{ textDecoration: 'none', color: '#c0c0c0' }}
-          to="/students"
-        >
-          Students
-        </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/">
-          Home
-        </Link>
+        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/employers"> Employers </Link>
+        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/students"> Students </Link>
+        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/info"> My Info </Link>
+        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/"> Home </Link>
+        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/login"> Login </Link>
       </nav>
-      <Switch>
-        <Route exact path="/" component={Welcome} />
-      </Switch>
-      <Switch>
-        <Route exact path="/students" component={All_Students} />
-      </Switch>
-      <Switch>
-        <Route exact path="/students/:studentId" component={Single_Student} />
-      </Switch>
-      <Switch>
-        <Route exact path="/students/new_student" component={Form_Student} />
-      </Switch>
-      <Switch>
-        <Route exact path="/employers" component={All_Employers} />
-      </Switch>
-      <Switch>
-        <Route
-          exact
-          path="/employers/:employerId"
-          component={Single_Employer}
-        />
-      </Switch>
-      <Switch>
-        <Route exact path="/employers/new_employer" component={Form_Employer} />
-      </Switch>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Welcome} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/sign_up" component={Sign_Up} />
+          <Route exact path="/info" component={User_Info} />
+          <Route exact path="/students" component={All_Students} />
+          <Route exact path="/students/:studentId" component={Single_Student} />
+          <Route exact path="/students/new_student" component={Form_Student} />
+          <Route exact path="/employers" component={All_Employers} />
+          <Route exact path="/employers/:employerId" component={Single_Employer} />
+          <Route exact path="/employers/new_employer" component={Form_Employer} />
+        </Switch>
+      </div>
     </div>
   );
 };
