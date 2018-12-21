@@ -1,7 +1,8 @@
 const router = require('express').Router();
 
-//routes go here...
-//example      router.use('/students', require('./students'));
+//These routes are mounted on /api
+router.use('/student', require('./student'));
+router.use('/employer', require('./employer'));
 
 // Handle 404s
 router.use((req, res, next) => {

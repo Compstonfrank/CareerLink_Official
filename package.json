@@ -17,13 +17,17 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.9",
     "path": "^0.12.7",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
