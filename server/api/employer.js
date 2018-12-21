@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Student, Company } = require('../db/models');
+const { Student, Employer } = require('../db/models');
 
 module.exports = router;
 
 router.get('/', async (req, res, next) => {
   try {
-    const comapanies = await Company.findAll();
-    res.json(comapanies);
+    const employers = await Employer.findAll();
+    res.json(employers);
   } catch (err) {
     next(err);
   }
@@ -15,8 +15,8 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const id = req.params.id;
-    const company = await Company.findById(id);
-    res.json(company);
+    const employer = await Employer.findById(id);
+    res.json(employer);
   } catch (err) {
     next(err);
   }
@@ -24,8 +24,8 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const company = await Company.create(req.body);
-    res.json(company);
+    const employer = await Employer.create(req.body);
+    res.json(employer);
   } catch (err) {
     next(err);
   }
@@ -35,13 +35,13 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const id = req.params.id;
-    Company.update(req.body, {
+    Employer.update(req.body, {
       where: { id: id },
       returning: true,
       plain: true
     });
-    const updatedCompany = await Company.findById(id);
-    res.json(updatedCompany);
+    const updatedEmployer = await Employer.findById(id);
+    res.json(updatedEmployer);
   } catch (err) {
     next(err);
   }
@@ -50,13 +50,13 @@ router.put('/:id', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   try {
     const id = req.params.id;
-    const company = await Company.findById(id);
-    Company.destroy({
+    const employer = await Employer.findById(id);
+    Employer.destroy({
       where: {
         id: id
       }
     });
-    res.json(company);
+    res.json(employer);
   } catch (err) {
     next(err);
   }
