@@ -1,0 +1,16 @@
+How to set up the backend database:
+
+- create a database with the name "careerLink"
+- set a node environment variable with the name 'usernameDB'
+  - it should equal the name for your postgres db
+    - find this by running `psql` in the terminal, and looking at the name to the left of `=#`
+  - you can do so in the terminal, like so `export usernameDB=justin`
+  - this is used in config.js
+  - I did this while I was in the `CareerLink_Official` scope in the terminal
+- globally install the sequalize commandline interface
+  - `npm i -g sequelize-cli`
+
+
+!!!! IMPORTANT !!!!
+- cd into `server/db` before you use Sequelize cli
+- run `sequelize db:migrate` to run all of the migration files which haven't been run yet

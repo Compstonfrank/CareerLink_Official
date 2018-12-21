@@ -1,10 +1,10 @@
-{
+module.exports = {
   "development": {
-    "username": "root",
+    "username": process.env.usernameDB,
     "password": null,
-    "database": "database_development",
+    "database": "careerLink",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
