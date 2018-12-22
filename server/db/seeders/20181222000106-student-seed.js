@@ -14,12 +14,11 @@ module.exports = {
           youtubeUrl: 'https://youtu.be/828MwqXqPGs',
           phoneNumber: '805-305-5324',
           description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: '37f59cab-be1f-4224-955c-ab93a996d695',
+          id: 'e40fd384-ed8c-4da7-8b86-3958aca1a191',
           firstName: 'Justin',
           lastName: 'Cook',
           email: 'justin.cook.dev@gmail.com',
@@ -29,12 +28,11 @@ module.exports = {
           youtubeUrl: 'https://youtu.be/N16HXP9oYEA',
           phoneNumber: '805-123-4567',
           description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: '8152a6f3-f3e0-416e-870f-4a75da260512',
+          id: 'cf6be523-60e0-408b-90e3-0c78e7a49bc4',
           firstName: 'Frank',
           lastName: 'Compston',
           email: 'compstonfrank@gmail.com',
@@ -43,28 +41,24 @@ module.exports = {
           githubUrl: 'https://github.com/Compstonfrank',
           youtubeUrl: 'https://www.youtube.com/watch?v=cj51uBq2cXA',
           phoneNumber: '805-123-4567',
-          description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: '8152a6f3-f3e0-416e-870f-4a75da260512',
+          id: 'df332b64-0385-45e8-bf76-3b9141751573',
           firstName: 'Robin',
           lastName: 'Lee',
           email: 'robin@google.com',
           photoUrl: 'http://profilepicturesdp.com/wp-content/uploads/2018/06/best-profile-avatar-pictures-6.png',
-          LinkedInUrl: 'https://www.linkedin.com/in/robin/',
+          LinkedInUrl: 'https://www.linkedin.com/',
           githubUrl: 'https://github.com/HamonOverdrive',
           youtubeUrl: 'https://www.youtube.com/watch?v=sIhQMyBsSVE',
           phoneNumber: '805-123-4567',
-          description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: '8152a6f3-f3e0-416e-870f-4a75da260512',
+          id: '6b2b907d-b1bc-4984-a2e9-dd127630fcc5',
           firstName: 'John',
           lastName: 'Doe',
           email: 'johnnydope@google.com',
@@ -74,12 +68,11 @@ module.exports = {
           youtubeUrl: 'https://www.youtube.com/watch?v=sIhQMyBsSVE',
           phoneNumber: '805-123-4567',
           description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: 'f4d70e9e-9ab0-4cee-bde3-7fbde5d7d1a0',
+          id: '3ae8b19a-590f-4000-ab88-8bb7dacce879',
           firstName: 'Ella',
           lastName: 'Vader',
           email: 'vaderforcer@google.com',
@@ -89,12 +82,11 @@ module.exports = {
           youtubeUrl: 'https://www.youtube.com/watch?v=sIhQMyBsSVE',
           phoneNumber: '805-123-4567',
           description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: '004f7724-a17f-4910-9ade-8f2c9b01ea40',
+          id: 'fa863845-14c6-43de-9efb-aa02fdf5984d',
           firstName: 'Blake',
           lastName: 'Bortles',
           email: 'jagsrule@google.com',
@@ -104,12 +96,11 @@ module.exports = {
           youtubeUrl: 'https://www.youtube.com/watch?v=sIhQMyBsSVE',
           phoneNumber: '805-123-4567',
           description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: '004f7724-a17f-4910-9ade-8f2c9b01ea40',
+          id: '668ff198-71b0-4b3a-a8ab-e8ab9eba1b4e',
           firstName: 'Jake',
           lastName: 'Jortles',
           email: 'jmendoza@google.com',
@@ -119,12 +110,11 @@ module.exports = {
           youtubeUrl: 'https://www.youtube.com/watch?v=sIhQMyBsSVE',
           phoneNumber: '805-123-4567',
           description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
-          id: '1c91d8af-bfed-4dcb-b488-bb4bad6c5524',
+          id: '048a20a0-e5d2-4a7a-8b59-f6be7aaf2e05',
           firstName: 'Bearson',
           lastName: 'Berenstain',
           email: 'berenstainbear@google.com',
@@ -134,9 +124,8 @@ module.exports = {
           youtubeUrl: 'https://www.youtube.com/watch?v=sIhQMyBsSVE',
           phoneNumber: '805-123-4567',
           description: 'words, words, words',
-          projectUrls: ['https://project1@project.com', 'https://project2@project.com', 'https://project3@project.com'],
-          createdAt: '2018-12-21',
-          updatedAt: '2018-12-21'
+          createdAt: new Date(),
+          updatedAt: new Date()
       }
     ], {});
   },
