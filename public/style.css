@@ -1,9 +1,14 @@
 #welcome-pics {
-    height: 20vw;
-    border: solid black;
+  height: 20vw;
+  border: solid black;
 }
 
 #allStudentPics {
-    height: 200px;
-    width: 200px;
+  height: 200px;
+  width: 200px;
+}
+
+#allEmployerPics {
+  height: 200px;
+  width: 200px;
 }
