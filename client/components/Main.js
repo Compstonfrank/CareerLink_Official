@@ -10,7 +10,7 @@ import About_Us from './About_Us';
 import All_Employers_Container from './All_Employers/All_Employers_Container';
 import All_Students_Container from './All_Students/All_Students_Container';
 import Single_Employer from './Single_Employer/Single_Employer';
-import Single_Student from './Single_Student/Single_Student';
+import Single_Student_Container from './Single_Student/Single_Student_Container';
 import Form_Employer from './Form_Employer/Form_Employer';
 import Form_Student from './Form_Student/Form_Student';
 
@@ -58,7 +58,7 @@ const Main = () => {
           <Route exact path="/info" component={User_Info} />
           <Route exact path="/about_us" component={About_Us} />
           <Route exact path="/students" component={All_Students_Container} />
-          <Route exact path="/students/:studentId" component={Single_Student} />
+          <Route exact path="/students/:studentId" component={Single_Student_Container} />
           <Route exact path="/students/new_student" component={Form_Student} />
           <Route exact path="/employers" component={All_Employers_Container} />
           <Route
