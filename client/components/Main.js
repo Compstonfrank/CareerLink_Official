@@ -18,12 +18,12 @@ const Main = () => {
   return (
     <div>
       <nav id="navbar">
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/employers"> Employers </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/students"> Students </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/info"> My Info </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/"> Home </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/login"> Login </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/about"> About Us </Link>
+        <Link to="/employers"> Employers </Link>
+        <Link to="/students"> Students </Link>
+        <Link to="/info"> My Info </Link>
+        <Link to="/"> Home </Link>
+        <Link to="/login"> Login </Link>
+        <Link to="/about"> About Us </Link>
       </nav>
 
       <div>
@@ -37,17 +37,25 @@ const Main = () => {
           <Route exact path="/students/:studentId" component={Single_Student} />
           <Route exact path="/students/new_student" component={Form_Student} />
           <Route exact path="/employers" component={All_Employers} />
-          <Route exact path="/employers/:employerId" component={Single_Employer} />
-          <Route exact path="/employers/new_employer" component={Form_Employer} />
+          <Route
+            exact
+            path="/employers/:employerId"
+            component={Single_Employer}
+          />
+          <Route
+            exact
+            path="/employers/new_employer"
+            component={Form_Employer}
+          />
         </Switch>
       </div>
 
       <footer id="footer">
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/about"> About Us </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/students/1"> Colleen Risso </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/students/2"> Frank Compston </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/students/3"> Justin Cook </Link>
-        <Link style={{ textDecoration: 'none', color: '#c0c0c0' }} to="/students/4"> Robin Lee </Link>
+        <Link to="/about"> About Us </Link>
+        <Link to="/students/1"> Colleen Risso </Link>
+        <Link to="/students/2"> Frank Compston </Link>
+        <Link to="/students/3"> Justin Cook </Link>
+        <Link to="/students/4"> Robin Lee </Link>
       </footer>
     </div>
   );

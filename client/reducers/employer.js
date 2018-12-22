@@ -105,7 +105,7 @@ const reducer = (state = initialState, action) => {
     case MAKE_EMPLOYER:
       const employersCopy1 = [...state.employers];
       employersCopy.push(action.employer);
-      return { ...state, employers: employersCopy };
+      return { ...state, employers: employersCopy1 };
     case DELETE_EMPLOYER:
       let employersCopy2 = [...state.employers];
       const deleteIndex = employersCopy2.findIndex(
