@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Company = sequelize.define('Company', {
+  const Employer = sequelize.define('Employer', {
     id: {
       type: DataTypes.UUID,
       allowNull: false,
@@ -60,8 +60,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     }
   }, {});
-  Company.associate = function(models) {
+  Employer.associate = function(models) {
     // associations can be defined here
   };
-  return Company;
+  return Employer;
 };

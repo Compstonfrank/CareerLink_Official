@@ -3,6 +3,8 @@ const { Student, Employer } = require('../db/models');
 
 module.exports = router;
 
+//These routes are mounted on /api/employer
+
 router.get('/', async (req, res, next) => {
   try {
     const employers = await Employer.findAll();
