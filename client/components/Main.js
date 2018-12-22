@@ -7,7 +7,7 @@ import Login from './Login/Login';
 import Sign_Up from './Sign_Up/Sign_Up';
 import User_Info from './User_Info/User_Info';
 import About_Us from './About_Us';
-import All_Employers from './All_Employers/All_Employers';
+import All_Employers_Container from './All_Employers/All_Employers_Container';
 import All_Students_Container from './All_Students/All_Students_Container';
 import Single_Employer from './Single_Employer/Single_Employer';
 import Single_Student from './Single_Student/Single_Student';
@@ -60,7 +60,7 @@ const Main = () => {
           <Route exact path="/students" component={All_Students_Container} />
           <Route exact path="/students/:studentId" component={Single_Student} />
           <Route exact path="/students/new_student" component={Form_Student} />
-          <Route exact path="/employers" component={All_Employers} />
+          <Route exact path="/employers" component={All_Employers_Container} />
           <Route
             exact
             path="/employers/:employerId"
