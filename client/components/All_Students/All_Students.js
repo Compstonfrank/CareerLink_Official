@@ -15,10 +15,9 @@ export default class AllStudents extends Component {
         {students.map(student => {
           return (
             <div key={student.id}>
-              <img src={student.photoUrl} />
+              <img src={student.photoUrl} id="allStudentPics" />
               <h2>
-                name: {student.firstName}
-                {student.lastName}
+                name: {student.firstName}{' '}{student.lastName}
               </h2>
               <h3>email: {student.email}</h3>
               <h3>linkedIn: {student.LinkedInUrl}</h3>

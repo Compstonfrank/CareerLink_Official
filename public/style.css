@@ -2,3 +2,8 @@
     height: 20vw;
     border: solid black;
 }
+
+#allStudentPics {
+    height: 200px;
+    width: 200px;
+}
