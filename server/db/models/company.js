@@ -1,4 +1,7 @@
 'use strict';
+
+const uuidv4 = require('uuid/v4');
+
 module.exports = (sequelize, DataTypes) => {
   const Employer = sequelize.define('Employer', {
     id: {
@@ -59,7 +62,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: true,
     }
-  }, {});
+  },
+  {
+    hooks: {
+      beforeValidate: function (employer) {
+        if (employer.id === null || !employer.id) {
+          employer.id = uuidv4();
+        }
+      },
+    }
+  });
   Employer.associate = function(models) {
     // associations can be defined here
   };

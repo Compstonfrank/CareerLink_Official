@@ -1,4 +1,7 @@
 'use strict';
+
+const uuidv4 = require('uuid/v4');
+
 module.exports = (sequelize, DataTypes) => {
   const Student = sequelize.define('Student', {
     id: {
@@ -66,7 +69,16 @@ module.exports = (sequelize, DataTypes) => {
         len: [0, 3]
       }
     }
-  }, {});
+  },
+  {
+    hooks: {
+      beforeValidate: function (user) {
+        if (user.id === null || !user.id) {
+          user.id = uuidv4();
+        }
+      },
+    }
+  });
   Student.associate = function(models) {
     // associations can be defined here
   };
