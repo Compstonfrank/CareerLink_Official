@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class AllStudents extends Component {
   componentDidMount() {
@@ -13,16 +14,14 @@ export default class AllStudents extends Component {
         {students.map(student => {
           return (
             <div key={student.id}>
-              <img src={student.photoUrl} id="allStudentPics" />
-              <h3>
-                name: {student.firstName} {student.lastName}
-              </h3>
-              <p>email: {student.email}</p>
-              <p>linkedIn: {student.LinkedInUrl}</p>
-              <p>GitHub: {student.gitHubUrl}</p>
-              <p>YouTube: {student.youtubeUrl}</p>
-              <p>Phone: {student.phoneNumber}</p>
-              <p>Description: {student.description}</p>
+              <Link to={`/students/${student.id}`}>
+                <div>
+                  <img src={student.photoUrl} id="allStudentPics" />
+                  <h3>
+                    {student.firstName} {student.lastName}
+                  </h3>
+                </div>
+              </Link>
             </div>
           );
         })}
