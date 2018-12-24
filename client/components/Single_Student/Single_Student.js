@@ -22,7 +22,7 @@ export default class Single_Student extends Component {
               </h2>
               <h3>email: {student.email}</h3>
               <h3>linkedIn: {student.LinkedInUrl}</h3>
-              <h3>GitHub: {student.gitHubUrl}</h3>
+              <h3>GitHub: {student.githubUrl}</h3>
               <h3>YouTube: {student.youtubeUrl}</h3>
               <h3>Phone: {student.phoneNumber}</h3>
               <h4>Description: {student.description}</h4>
