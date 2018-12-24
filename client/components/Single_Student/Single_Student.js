@@ -2,9 +2,11 @@
 import React, { Component } from 'react';
 
 export default class Single_Student extends Component {
+    
     componentDidMount(){
         this.props.fetchSingleStudent()
     }
+
     componentDidUpdate (prevProps) {
         if (prevProps.match.params.studentId !== this.props.match.params.studentId) {
           this.props.fetchSingleStudent();

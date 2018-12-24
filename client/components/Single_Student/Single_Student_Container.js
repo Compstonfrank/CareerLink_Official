@@ -1,8 +1,8 @@
+/* eslint-disable camelcase */
+
 import Single_Student from './Single_Student';
 import { connect } from 'react-redux';
 import {fetchStudent} from '../../reducers/student'
-
-
 
 const mapStateToProps = state => {
   return {

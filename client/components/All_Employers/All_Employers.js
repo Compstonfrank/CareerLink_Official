@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class All_Employers extends Component {
   componentDidMount() {
@@ -14,8 +15,12 @@ export default class All_Employers extends Component {
         {employers.map(employer => {
           return (
             <div key={employer.id}>
-              <img src={employer.logoUrl} id="allemployerPics" />
-              <h3>name: {employer.name}</h3>
+              <Link to={`/employers/${employer.id}`}>
+                <div>
+                  <img src={employer.logoUrl} id="allemployerPics" />
+                  <h3>name: {employer.name}</h3>
+                </div>
+              </Link>
               <h4>industry: {employer.industry}</h4>
               <p>email: {employer.email}</p>
               <p>linkedIn: {employer.LinkedInUrl}</p>
