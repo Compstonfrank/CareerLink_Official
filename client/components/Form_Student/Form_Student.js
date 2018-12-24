@@ -13,17 +13,17 @@ const SignupSchema = Yup.object().shape({
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Required'),
+    password: Yup.string()
+        .required('No password provided.')
+        .min(8, 'Password is too short - should be 8 chars minimum.'),
+    photoUrl: Yup.string(),
     email: Yup.string()
       .email('Invalid email')
       .required('Required'),
     phoneNumber: Yup.string(),
-    password: Yup.string()
-        .required('No password provided.')
-        .min(8, 'Password is too short - should be 8 chars minimum.'),
-      photoUrl: Yup.string(),
-      LinkedInUrl: Yup.string(),
-      githubUrl: Yup.string(),
-      youtubeUrl: Yup.string()
+    LinkedInUrl: Yup.string(),
+    githubUrl: Yup.string(),
+    youtubeUrl: Yup.string()
   });
 
 export default class Form_Student extends Component {
@@ -47,10 +47,10 @@ export default class Form_Student extends Component {
             initialValues={{
                firstName: '',
                lastName: '',
-               email: '',
-               phoneNumber: '',
                password: '',
                photoUrl: '',
+               email: '',
+               phoneNumber: '',
                LinkedInUrl: '',
                githubUrl: '',
                youtubeUrl: ''
