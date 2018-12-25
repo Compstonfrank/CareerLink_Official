@@ -9,7 +9,7 @@ import User_Info from './User_Info/User_Info';
 import About_Us from './About_Us';
 import All_Employers_Container from './All_Employers/All_Employers_Container';
 import All_Students_Container from './All_Students/All_Students_Container';
-import Single_Employer from './Single_Employer/Single_Employer';
+import Single_Employer_Container from './Single_Employer/Single_Employer_Container';
 import Single_Student_Container from './Single_Student/Single_Student_Container';
 import Form_Employer from './Form_Employer/Form_Employer';
 import Form_Student from './Form_Student/Form_Student';
@@ -64,7 +64,7 @@ const Main = () => {
           <Route
             exact
             path="/employers/:employerId"
-            component={Single_Employer}
+            component={Single_Employer_Container}
           />
           <Route
             exact
