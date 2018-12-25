@@ -80,6 +80,18 @@ module.exports = (sequelize, DataTypes) => {
         if (user.id === null || !user.id) {
           user.id = uuidv4();
         }
+        if(user.githubUrl === ''){
+          user.githubUrl = null
+        }
+
+        if(user.LinkedInUrl === ''){
+          user.LinkedInUrl = null
+        }
+
+        if(user.youtubeUrl === ''){
+          user.youtubeUrl = null
+        }
+
       },
     }
   });

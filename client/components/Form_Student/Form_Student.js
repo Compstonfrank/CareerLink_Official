@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Formik, FormikProps, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import {postStudent} from '../../reducers/student'
 
 // Yup validations
 const SignupSchema = Yup.object().shape({
@@ -16,29 +17,40 @@ const SignupSchema = Yup.object().shape({
     password: Yup.string()
         .required('No password provided.')
         .min(8, 'Password is too short - should be 8 chars minimum.'),
-    photoUrl: Yup.string(),
+    photoUrl: Yup.string()
+      .url('Invalid needs to be a url'),
+    description: Yup.string(),
     email: Yup.string()
       .email('Invalid email')
-      .required('Required'),
+      .required('Email Required'),
     phoneNumber: Yup.string(),
-    LinkedInUrl: Yup.string(),
-    githubUrl: Yup.string(),
+    LinkedInUrl: Yup.string()
+      .url('Invalid needs to be a url'),
+    githubUrl: Yup.string()
+      .url('Invalid needs to be a url'),
     youtubeUrl: Yup.string()
+      .url('Invalid needs to be a url')
   });
+
 
 export default class Form_Student extends Component {
 
 
     handleSubmit = (values, {
-        props = this.props,
-        setSubmitting
-      }) => {
-
-        console.log(values);
-        alert('Form Submitted');
+      props = this.props,
+      setSubmitting
+    }) => {
+        props.dispatch(postStudent(values))
+        // SignupSchema.validate({})
+        // .catch(function(e) {
+        // console.log(e);
+        // });
         setSubmitting(false);
+        // props.history.push('/students')
+        // not sure if need return here
         return;
-    }
+  }
+
 
     render() {
 
@@ -48,7 +60,8 @@ export default class Form_Student extends Component {
                firstName: '',
                lastName: '',
                password: '',
-               photoUrl: '',
+               photoUrl: 'https://t3.ftcdn.net/jpg/00/64/67/52/240_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg',
+               description: '',
                email: '',
                phoneNumber: '',
                LinkedInUrl: '',
@@ -77,7 +90,7 @@ export default class Form_Student extends Component {
                    <ErrorMessage name="lastName" />
 
                    <Field
-                      type="text"
+                      type="password"
                       name="password"
                       placeholder="Password"
                              />
@@ -89,6 +102,13 @@ export default class Form_Student extends Component {
                       placeholder="Photo Url"
                              />
                     <ErrorMessage name="photoUrl" />
+
+                    <Field
+                      type="text"
+                      name="description"
+                      placeholder="description"
+                             />
+                    <ErrorMessage name="description" />
 
                     <h1>Contact Info</h1>
                     <Field
