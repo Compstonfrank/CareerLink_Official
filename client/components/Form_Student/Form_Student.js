@@ -38,7 +38,7 @@ export default class Form_Student extends Component {
 
     handleSubmit = (values, {
       props = this.props,
-      setSubmitting
+      setSubmitting,
     }) => {
         props.dispatch(postStudent(values))
         // SignupSchema.validate({})
