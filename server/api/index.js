@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 //These routes are mounted on /api
+router.use('/auth', require('./auth/index'))
 router.use('/student', require('./student'));
 router.use('/employer', require('./employer'));
 

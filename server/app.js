@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
 const morgan = require('morgan');
 
 const app = express();
@@ -14,6 +16,17 @@ app.set('json spaces', 2);
 //parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// session middleware
+app.use(session({
+  secret: 'get_the_money',
+  resave: false,
+  saveUninitialized: false
+}))
+
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 //static middleware
 app.use(express.static(path.join(__dirname, '..', 'public')));
