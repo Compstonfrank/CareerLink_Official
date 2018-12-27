@@ -15,6 +15,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "express": "^4.116.4",
+    "express-session": "^1.15.6",
     "formik": "^1.4.1",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.9",
