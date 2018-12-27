@@ -36,19 +36,23 @@ const SignupSchema = Yup.object().shape({
 export default class Form_Student extends Component {
 
 
-    handleSubmit = (values, {
+    handleSubmit = async (values, {
       props = this.props,
       setSubmitting,
+      setStatus
     }) => {
-        props.dispatch(postStudent(values))
-        // SignupSchema.validate({})
-        // .catch(function(e) {
-        // console.log(e);
-        // });
+      try {
+          setStatus(undefined)
+          await props.dispatch(postStudent(values))
+          setSubmitting(false);
+          // props.history.push('/students')
+          return;
+      } catch (err){
+        // sets API errors using setStatus this is test still
+        setStatus({email: 'Email Already exists'})
+        // resets Submit button so you can use again after fixing status error
         setSubmitting(false);
-        // props.history.push('/students')
-        // not sure if need return here
-        return;
+      }
   }
 
 
@@ -71,7 +75,7 @@ export default class Form_Student extends Component {
             validationSchema={SignupSchema}
             onSubmit={this.handleSubmit}
             render={formProps => {
-
+              console.log(formProps)
               return (
                 <Form>
                     <h1>Personal Info</h1>
@@ -116,7 +120,11 @@ export default class Form_Student extends Component {
                       name="email"
                       placeholder="Email address"
                              />
-                    <ErrorMessage name="email" />
+
+                    {formProps.status && formProps.status.email ? (
+                      <div>API Error: {formProps.status.email}</div>
+                    ) : <ErrorMessage name="email" />}
+
 
                     <Field
                       type="text"
@@ -132,6 +140,7 @@ export default class Form_Student extends Component {
                       name="LinkedInUrl"
                       placeholder="LinkedIn Url"
                              />
+
                     <ErrorMessage name="LinkedInUrl" />
 
                     <Field
