@@ -2,10 +2,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const Login = (props) => {
-    return (
+class Sign_Up extends Component {
+    constructor(){
+        super()
+        this.state = {
+            selection: ''
+        }
+    }
+
+    handleClickStudent() {
+        return this.setState({
+            selection: 'student'
+        })
+    }
+
+    handleClickEmployer() {
+
+    }
+
+    render() {
+        return (
         <h1>NEW USER SIGN-UP COMPONENT</h1>
-    )
+        )
+    }
 }
 
-export default Login;
+export default Sign_Up;
