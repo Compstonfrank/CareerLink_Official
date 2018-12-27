@@ -10,7 +10,7 @@ const Login = props => {
       <br />
       <form>
         <label> Email: </label>
-        <input type="text" name="email" placeholder="Email" />
+        <input type="text" name="emailkkc" placeholder="Email" />
 
         <label> Password: </label>
         <input type="text" name="password" placeholder="Password" />

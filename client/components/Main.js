@@ -13,7 +13,7 @@ import All_Students_Container from './All_Students/All_Students_Container';
 import Single_Employer_Container from './Single_Employer/Single_Employer_Container';
 import Single_Student_Container from './Single_Student/Single_Student_Container';
 import Form_Employer from './Form_Employer/Form_Employer';
-import Form_Student from './Form_Student/Form_Student';
+import Form_Student_Container from './Form_Student/Form_Student_Container';
 
 const Main = () => {
   return (
@@ -59,18 +59,13 @@ const Main = () => {
           <Route exact path="/info" component={User_Info} />
           <Route exact path="/about_us" component={About_Us} />
           <Route exact path="/students" component={All_Students_Container} />
+          <Route exact path="/students/new_student" component={Form_Student_Container} />
           <Route exact path="/students/:studentId" component={Single_Student_Container} />
-          <Route exact path="/students/new_student" component={Form_Student} />
           <Route exact path="/employers" component={All_Employers_Container} />
           <Route
             exact
             path="/employers/:employerId"
             component={Single_Employer_Container}
-          />
-          <Route
-            exact
-            path="/employers/new_employer"
-            component={Form_Employer}
           />
         </Switch>
       </div>
