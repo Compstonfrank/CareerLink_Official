@@ -2,6 +2,7 @@
 import React from 'react';
 import { Route, NavLink, withRouter, Switch, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import Welcome from './Welcome';
 import Login from './Login/Login';
 import Sign_Up from './Sign_Up/Sign_Up';
