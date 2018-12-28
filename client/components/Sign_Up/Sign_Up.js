@@ -7,18 +7,29 @@ import Form_Employer from '../Form_Employer/Form_Employer';
 class Sign_Up extends Component {
     constructor(){
         super()
+
         this.state = {
-            showComponent: '',
+            student: false,
+            employer: false
         }
+
         this.handleChange = this.handleChange.bind(this)
         this.handleClick = this.handleClick.bind(this)
     }
 
     handleChange(event) {
         // this captures the option being selected, but not submitted.
-        this.setState({
-            showComponent: event.target.value
-        })
+        if (event.target.value === 'Student'){
+            this.setState({
+                student: true,
+                employer: false
+            })
+        } else if (event.target.value === 'Employer'){
+            this.setState({
+                student: false,
+                employer: true
+            })
+        }
     }
 
     handleClick() {
@@ -54,11 +65,9 @@ class Sign_Up extends Component {
                         </select>
                     </div>
                     <div>
-                        <h5>Students</h5>
-                        {this.state.showComponent
+                        {this.state.student
                         ? <Form_Student_Container />
                         : null}
-                        <h5>Employers</h5>
                         {this.state.employer
                         ? <Form_Employer />
                         : null}
