@@ -23,10 +23,6 @@ export default class Single_Employer extends Component {
             <div key={employer.id}>
                 <div id="heading">
                     <h1>{employer.name}</h1>
-                    {employer.logoUrl
-                        ? <img src={employer.logoUrl} id="allStudentPics" />
-                        : null
-                    }
                 </div>
                 
                 <div id="video">
@@ -47,6 +43,7 @@ export default class Single_Employer extends Component {
                         : null
                     }
                 </div>
+                <br />
 
                 <div id="contactInfo">
                     <h4>Contact Information</h4>
@@ -59,7 +56,7 @@ export default class Single_Employer extends Component {
                 <br />
 
                 <div id="singleLinks">
-                    {employer.LinkedInUrl || employer.gitHubUrl
+                    {employer.LinkedInUrl || employer.gitHubUrl || employer.LinkedInUrl && employer.gitHubUrl
                         ? <h4>Additional Information about {employer.name}</h4>
                         : null
                     }
@@ -68,8 +65,8 @@ export default class Single_Employer extends Component {
                         : null
                     }
                     {' '}
-                    {employer.gitHubUrl
-                        ? <a href={employer.gitHubUrl}>GitHub</a>
+                    {employer.githubUrl
+                        ? <a href={employer.githubUrl}>GitHub</a>
                         : null
                     }
                 </div>
