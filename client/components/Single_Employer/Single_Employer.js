@@ -1,20 +1,7 @@
 /* eslint-disable camelcase */
 
 import React, { Component } from 'react';
-import YouTubePlayer from '../YouTubePlayer';
-import Stars from '../Stars';
-
-function utilityFunctionVideoName(url) {
-    if (url.includes('https://youtu.be/') === true) {
-        return url.slice(17)
-    } else if (url.includes('https://www.youtube.com/watch?v=') === true) {
-        return url.slice(32);
-    } else if (url.includes('https://www.youtube.com/embed/') === true) {
-        return url.slice(30);
-    } else {
-        console.log('video source may not be recognized')
-    }
-}
+import { getVideoName } from '../../util';
 
 export default class Single_Employer extends Component {
 
@@ -36,11 +23,9 @@ export default class Single_Employer extends Component {
                 <img src={employer.logoUrl} id="allStudentPics" />
                 <h3>name: {employer.name}</h3>
 
-                <Stars />
-
                 <div id="youtube">
                 {employer.youtubeUrl && employer.youtubeUrl.length > 0
-                    ? <iframe width="640" height="390" src={`https://www.youtube.com/embed/${utilityFunctionVideoName(employer.youtubeUrl)}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} />
+                    ? <iframe width="640" height="390" src={`https://www.youtube.com/embed/${getVideoName(employer.youtubeUrl)}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} />
                     : <h4>This company's video is not currently available</h4>
                 }
                 </div>
