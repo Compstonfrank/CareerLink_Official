@@ -19,7 +19,7 @@ export default class All_Employers extends Component {
               <Link to={`/employers/${employer.id}`}>
                 <div>
                   <img src={employer.logoUrl} id="allemployerPics" />
-                  <h3>name: {employer.name}</h3>
+                  <h3>{employer.name}</h3>
                 </div>
               </Link>
             </div>
