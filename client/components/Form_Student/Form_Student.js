@@ -39,7 +39,8 @@ export default class Form_Student extends Component {
     handleSubmit = async (values, {
       props = this.props,
       setSubmitting,
-      setStatus
+      setStatus,
+      setErrors
     }) => {
       try {
           setStatus(undefined)
@@ -48,10 +49,12 @@ export default class Form_Student extends Component {
           // props.history.push('/students')
           return;
       } catch (err){
-        // sets API errors using setStatus this is test still
-        setStatus({email: 'Email Already exists'})
         // resets Submit button so you can use again after fixing status error
         setSubmitting(false);
+        // sets API errors using setStatus this is test still
+        // setStatus({email: 'Email Already exists'})
+        setErrors({email: 'API Error: Email already exists'})
+
       }
   }
 
@@ -75,7 +78,7 @@ export default class Form_Student extends Component {
             validationSchema={SignupSchema}
             onSubmit={this.handleSubmit}
             render={formProps => {
-              console.log(formProps)
+              console.log(formProps.errors)
               return (
                 <Form>
                     <h1>Personal Info</h1>
@@ -122,8 +125,8 @@ export default class Form_Student extends Component {
                              />
 
                     {formProps.status && formProps.status.email ? (
-                      <div>API Error: {formProps.status.email}</div>
-                    ) : <ErrorMessage name="email" />}
+                      <div className="errorMsg">API Error: {formProps.status.email}</div>
+                    ) : <ErrorMessage name="email"  />}
 
 
                     <Field
