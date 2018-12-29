@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import YouTubePlayer from '../YouTubePlayer';
+import Stars from '../Stars';
 
 function utilityFunctionVideoName(url) {
     if (url.includes('https://youtu.be/') === true) {
@@ -35,16 +36,7 @@ export default class Single_Employer extends Component {
                 <img src={employer.logoUrl} id="allStudentPics" />
                 <h3>name: {employer.name}</h3>
 
-                <ul class="form">
-                    <li class="rating">
-                        <input type="radio" name="rating" value="0" checked /><span class="hide"></span>
-                        <input type="radio" name="rating" value="1" /><span></span>
-                        <input type="radio" name="rating" value="2" /><span></span>
-                        <input type="radio" name="rating" value="3" /><span></span>
-                        <input type="radio" name="rating" value="4" /><span></span>
-                        <input type="radio" name="rating" value="5" /><span></span>
-                    </li>
-                </ul>
+                <Stars />
 
                 <div id="youtube">
                 {employer.youtubeUrl && employer.youtubeUrl.length > 0
