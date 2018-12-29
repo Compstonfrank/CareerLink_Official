@@ -21,13 +21,6 @@ export default class All_Employers extends Component {
                   <h3>name: {employer.name}</h3>
                 </div>
               </Link>
-              <h4>industry: {employer.industry}</h4>
-              <p>email: {employer.email}</p>
-              <p>linkedIn: {employer.LinkedInUrl}</p>
-              <p>GitHub: {employer.gitHubUrl}</p>
-              <p>YouTube: {employer.youtubeUrl}</p>
-              <p>Phone: {employer.phoneNumber}</p>
-              <p>Description: {employer.description}</p>
             </div>
           );
         })}
