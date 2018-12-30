@@ -4,7 +4,7 @@ const localStrategy = require('passport-custom').Strategy;
 
 const { UserType, Student, Employer } = require('../../db/models');
 
-
+// passport configuration
 const verifyCallback = async (request, done) => {
   try {
     const userType = request.params.type === 'student' ? Student : Employer;
@@ -33,12 +33,14 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-router.put('/type', async (request, response, next) => {
+
+// api routes
+router.post('/type', async (request, response, next) => {
   try {
     const {email} = request.body;
     const {type} = await UserType.findOne({ where: { email } });
     if (type) {
-      response.redirect(`./login/${type}`);
+      response.redirect(307, `./login/${type}`);
     } else {
       const noUser = new Error('No user found.');
       next(noUser)
@@ -48,8 +50,9 @@ router.put('/type', async (request, response, next) => {
   }
 });
 
-router.put('/login/:type', passport.authenticate('local-strategy'), {
-  successRedirect: '/welcome',
-  failureRedirect: '/login'
+router.post('/login/:type', passport.authenticate('local-strategy'), (request, result) => {
+  result.json(request.user)
 });
 
+
+module.exports = router;
