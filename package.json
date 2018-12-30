@@ -20,6 +20,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.9",
     "passport": "^0.4.0",
+    "passport-custom": "^1.0.5",
     "path": "^0.12.7",
     "pg": "^7.7.1",
     "pg-hstore": "^2.3.2",

@@ -80,7 +80,7 @@ module.exports = {
         name: 'Land Gorilla',
         email: 'info@landgorilla.com',
         logoUrl: 'https://s.yimg.com/ny/api/res/1.2/YsBGg1qUWwf.009whWC9ZQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://globalfinance.zenfs.com/en_us/Finance/US_AFTP_PRNEWSWIRE_LIVE/Land_Gorilla_Announces_Integration_With-a33991c3619056dcc69645318f7ec4f4',
-        LinkedInUrl: 'https://www.linkedin.com/company/land-gorilla/',
+        LinkedInUrl: 'https:/www.linkedin.com/company/land-gorilla/',
         youtubeUrl: 'https://www.youtube.com/watch?v=sIhQMyBsSVE',
         description: 'Land Gorilla ...',
         industry: 'Construction Loan Software Developer',
