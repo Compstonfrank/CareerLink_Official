@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: true
       }
     },
+    userId: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4
+    },
     type: {
       type: DataTypes.STRING,
       allowNull: false,
