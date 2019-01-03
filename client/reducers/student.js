@@ -10,6 +10,8 @@ const DELETE_STUDENT = 'DELETE_STUDENT';
 const UPDATE_STUDENT = 'UPDATE_STUDENT';
 
 //action creators
+
+//gets a single student
 const getStudent = student => {
   return {
     type: GET_STUDENT,
@@ -17,6 +19,7 @@ const getStudent = student => {
   };
 };
 
+//gets all students
 const getStudents = students => {
   return {
     type: GET_STUDENTS,
@@ -24,6 +27,7 @@ const getStudents = students => {
   };
 };
 
+//creates a new student
 const makeStudent = student => {
   return {
     type: MAKE_STUDENT,
@@ -31,6 +35,7 @@ const makeStudent = student => {
   };
 };
 
+//deletes a student
 const deleteStudent = student => {
   return {
     type: DELETE_STUDENT,
@@ -38,6 +43,7 @@ const deleteStudent = student => {
   };
 };
 
+//updates an existing student
 const updateStudent = student => {
   return {
     type: UPDATE_STUDENT,
@@ -46,6 +52,7 @@ const updateStudent = student => {
 };
 
 //thunks
+//This thunk will fetch the selected student from the server and will be passed to the selectedStudent action creator so he/she can be placed on the selectedStudent state.
 export const fetchStudent = studentID => {
   return async dispatch => {
     const response = await Axios.get(`/api/student/${studentID}`);
@@ -54,6 +61,7 @@ export const fetchStudent = studentID => {
   };
 };
 
+//This thunk will fetch the existing students from the server and will be passed to the studentsFromServer action creator so they can be added to students array on state.
 export const fetchStudents = () => {
   return async dispatch => {
     const response = await Axios.get('/api/student');
@@ -62,6 +70,7 @@ export const fetchStudents = () => {
   };
 };
 
+//This thunk will take the student id and the student info to update the selected student.
 export const putStudent = updatedStudentInfo => {
   return async dispatch => {
     const response = await Axios.put(
@@ -73,6 +82,7 @@ export const putStudent = updatedStudentInfo => {
   };
 };
 
+//Post request for newly created student. This thunk creator will recieve a student instance which will be passed as the request body.
 export const postStudent = newStudent => {
   return async dispatch => {
     const response = await Axios.post('/api/student', newStudent);
@@ -81,11 +91,11 @@ export const postStudent = newStudent => {
   };
 };
 
+//This thunk will fetch the selected student from the server and will be passed to the deletedStudent action creator. It will also need to be removed from the students array. In this case {data} will not return anything that we can use to update the state.
 export const destroyStudent = studentId => {
   return async dispatch => {
-    const response = await Axios.delete(`/api/student/${studentId}`);
-    const deletedStudent = response.data;
-    dispatch(deleteStudent(deletedStudent));
+    await Axios.delete(`/api/student/${studentId}`, studentId);
+    dispatch(deleteStudent(studentId));
   };
 };
 

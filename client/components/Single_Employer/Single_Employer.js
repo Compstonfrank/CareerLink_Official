@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react';
 import { getVideoName } from '../../util';
+import EditStarRating from '../StarRatings/EditStarRating';
 
 export default class Single_Employer extends Component {
 
@@ -22,6 +23,7 @@ export default class Single_Employer extends Component {
         return (
             <div key={employer.id}>
                 <div id="heading">
+                    <EditStarRating />
                     <h1>{employer.name}</h1>
                 </div>
                 

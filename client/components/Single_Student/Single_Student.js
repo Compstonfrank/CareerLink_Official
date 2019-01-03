@@ -1,7 +1,8 @@
 /* eslint-disable complexity */
 /* eslint-disable camelcase */
 import React, { Component } from 'react';
-import { getVideoName } from '../../util';
+import YouTubePlayer from '../YouTubePlayer';
+import EditStarRating from '../StarRatings/EditStarRating';
 
 export default class Single_Student extends Component {
     
@@ -21,13 +22,14 @@ export default class Single_Student extends Component {
             <div key={student.id}>
 
                 <div id="heading">
+                    <EditStarRating />
                     <h1>{student.firstName}{' '}{student.lastName}</h1>
                 </div>
                 <br />
 
                 <div id="youtube">
-                {student.youtubeUrl && student.youtubeUrl.length > 0
-                    ? <iframe width="640" height="390" src={`https://www.youtube.com/embed/${getVideoName(student.youtubeUrl)}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} />
+                {student.youtubeUrl
+                    ? <YouTubePlayer url={student.youtubeUrl} width={640} height={385} />
                     : <h4>This student's video is not currently available</h4>
                 }
                 </div>
