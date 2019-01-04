@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('User-Types', [
+    return queryInterface.bulkInsert('UserTypes', [
       // students below
       {
         userId: '37f59cab-be1f-4224-955c-ab93a996d695',
@@ -61,7 +61,7 @@ module.exports = {
         updatedAt: new Date()
     },
     {
-        userId: '048a20a0-e5d2-4a7a-8b59-f6be7aaf2e051',
+        userId: '048a20a0-e5d2-4a7a-8b59-f6be7aaf2e05',
         email: 'berenstainbear@google.com',
         type: 'student',
         createdAt: new Date(),
@@ -142,6 +142,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete('User-Types', null, {});
+      return queryInterface.bulkDelete('UserTypes', null, {});
   }
 };
