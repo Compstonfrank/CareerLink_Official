@@ -10,26 +10,12 @@ const SignupSchema = Yup.object().shape({
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Required'),
-    lastName: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
     password: Yup.string()
         .required('No password provided.')
         .min(8, 'Password is too short - should be 8 chars minimum.'),
-    photoUrl: Yup.string()
-      .url('Invalid needs to be a url'),
-    description: Yup.string(),
     email: Yup.string()
       .email('Invalid email')
       .required('Email Required'),
-    phoneNumber: Yup.string(),
-    LinkedInUrl: Yup.string()
-      .url('Invalid needs to be a url'),
-    githubUrl: Yup.string()
-      .url('Invalid needs to be a url'),
-    youtubeUrl: Yup.string()
-      .url('Invalid needs to be a url')
   });
 
 
@@ -40,21 +26,19 @@ export default class Form_Student extends Component {
       props = this.props,
       setSubmitting,
       setStatus,
-      setErrors
+      setErrors,
+      setFieldError
     }) => {
       try {
           setStatus(undefined)
-          await props.dispatch(postStudent(values))
+          let result = await props.dispatch(postStudent(values))
+          if (result.user.error.response.status === 401) {
+            console.log('I hit a 401 error in the backend')
+          }
           setSubmitting(false);
-          // props.history.push('/students')
           return;
       } catch (err){
-        // resets Submit button so you can use again after fixing status error
-        setSubmitting(false);
-        // sets API errors using setStatus this is test still
-        // setStatus({email: 'Email Already exists'})
-        setErrors({email: 'API Error: Email already exists'})
-
+        console.log(err)
       }
   }
 
@@ -65,15 +49,8 @@ export default class Form_Student extends Component {
           <Formik
             initialValues={{
                firstName: '',
-               lastName: '',
                password: '',
-               photoUrl: 'https://t3.ftcdn.net/jpg/00/64/67/52/240_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg',
-               description: '',
                email: '',
-               phoneNumber: '',
-               LinkedInUrl: '',
-               githubUrl: '',
-               youtubeUrl: ''
             }}
             validationSchema={SignupSchema}
             onSubmit={this.handleSubmit}
@@ -81,20 +58,16 @@ export default class Form_Student extends Component {
               console.log(formProps.errors)
               return (
                 <Form>
-                    <h1>Personal Info</h1>
+                    <h1>Formik Yup Form</h1>
                    <Field
                      type="text"
                      name="firstName"
                      placeholder="First Name"
                    />
+                   {formProps.errors.name && formProps.errors.name ? (
+                          <div>{formProps.errors.name}</div>
+                        ) : null}
                    <ErrorMessage name="firstName" />
-
-                   <Field
-                     type="text"
-                     name="lastName"
-                     placeholder="Last Name"
-                   />
-                   <ErrorMessage name="lastName" />
 
                    <Field
                       type="password"
@@ -105,60 +78,10 @@ export default class Form_Student extends Component {
 
                     <Field
                       type="text"
-                      name="photoUrl"
-                      placeholder="Photo Url"
-                             />
-                    <ErrorMessage name="photoUrl" />
-
-                    <Field
-                      type="text"
-                      name="description"
-                      placeholder="description"
-                             />
-                    <ErrorMessage name="description" />
-
-                    <h1>Contact Info</h1>
-                    <Field
-                      type="text"
                       name="email"
                       placeholder="Email address"
                              />
-
-                    {formProps.status && formProps.status.email ? (
-                      <div className="errorMsg">API Error: {formProps.status.email}</div>
-                    ) : <ErrorMessage name="email"  />}
-
-
-                    <Field
-                      type="text"
-                      name="phoneNumber"
-                      placeholder="Phone Number"
-                             />
-                    <ErrorMessage name="phoneNumber" />
-
-
-                    <h1>Professional Info</h1>
-                    <Field
-                      type="text"
-                      name="LinkedInUrl"
-                      placeholder="LinkedIn Url"
-                             />
-
-                    <ErrorMessage name="LinkedInUrl" />
-
-                    <Field
-                      type="text"
-                      name="githubUrl"
-                      placeholder="Github Url"
-                             />
-                    <ErrorMessage name="githubUrl" />
-
-                    <Field
-                      type="text"
-                      name="youtubeUrl"
-                      placeholder="YouTube Url"
-                             />
-                    <ErrorMessage name="youtubeUrl" />
+                    <ErrorMessage name="email" />
 
                     <button
                       type="submit"
